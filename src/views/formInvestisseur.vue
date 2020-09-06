@@ -7,63 +7,63 @@
             <div class="form-row mb-4">
                 <div class="form-group col-md-6">
                     <label for="lastname"><strong>Nom</strong></label>
-                    <input type="text" class="form-control" name="lastname">
-                 </div>   
+                    <input type="text" class="form-control" v-model="lastname">
+                </div>   
                 <div class="form-group col-md-6">
                     <label for="firstname"><strong>Prénom</strong></label>
-                    <input type="text" class="form-control" name="firstname">
+                    <input type="text" class="form-control" v-model="firstname">
                 </div>  
             </div>
             <div class="form-group mb-4">
                 <label for="address"><strong>Adresse</strong></label>
-                <input type="text" class="form-control" name="address">
+                <input type="text" class="form-control" v-model="address">
             </div>  
             <div class="form-row mb-4">
                 <div class="form-group col-md-6">
                     <label for="cp"><strong>Code Postal</strong></label>
-                    <input type="text" class="form-control" name="cp">
+                    <input type="number" class="form-control" v-model="cp">
                 </div> 
                 <div class="form-group col-md-6">
                     <label for="city"><strong>Ville</strong></label>
-                    <input type="text" class="form-control" name="city">
+                    <input type="text" class="form-control" v-model="city">
                 </div>  
             </div>
             <div class="form-group mb-4">
-                    <label for="country"><strong>Pays</strong></label>
-                    <input type="text" class="form-control" name="country">
+                <label for="country"><strong>Pays</strong></label>
+                <input type="text" class="form-control" v-model="country">
             </div>  
             <div class="form-row mb-4">
                 <div class="form-group col-md-6">
                     <label for="phone"><strong>Téléphone</strong></label>
-                    <input type="number" class="form-control" name="phone">
+                    <input type="number" class="form-control" v-model="phone">
                 </div> 
                 <div class="form-group col-md-6">
                     <label for="mail"><strong>Email</strong></label>
-                    <input type="email" class="form-control" name="mail">
+                    <input type="email" class="form-control" v-model="mail"> 
                 </div>
             </div>
             <div class="form-row mb-4">
                 <div class="form-group mb-5 col-md-6">
                     <label for="amount_to_invest"><strong>Quel montant souhaitez-vous investir?</strong></label>
-                    <input type="number" class="form-control" name="amount_to_invest">
+                    <input type="number" class="form-control" v-model="amount_to_invest">
                 </div> 
                 <div class="form-group mb-5 col-md-6">
                     <label for="profitability"><strong>Quelle rentabilité annuelle souhaitez-vous?</strong></label>
-                    <input type="number" class="form-control" name="profitability">
+                    <input type="number" class="form-control" v-model="profitability">
                 </div> 
             </div>
             <div class="form-group mb-5">
-                <label for="type-project"><strong>Quelles catégories de projet vous intéresse ?</strong></label>
+                <label for="type-project"><strong>Quelle catégorie de projet vous intéresse ?</strong></label>
                 <div class="form-check">
-                    <input class="form-check-input mr-2" type="checkbox" value="education" name="type_project">
+                    <input class="form-check-input mr-2" type="radio" value="education" name="type_project" v-model="checkedCategories">
                     <label class="form-check-label mr-5" for="type_project">Éducation</label>
-                    <input class="form-check-input mr-2" type="checkbox" value="ecologie" name="type_project">
+                    <input class="form-check-input mr-2" type="radio" value="ecologie" name="type_project" v-model="checkedCategories">
                     <label class="form-check-label mr-5" for="type_project">Écologie</label>
-                    <input class="form-check-input mr-2" type="checkbox" value="social" name="type_project">
+                    <input class="form-check-input mr-2" type="radio" value="social" name="type_project" v-model="checkedCategories">
                     <label class="form-check-label mr-5" for="type_project">Social</label>
-                    <input class="form-check-input mr-2" type="checkbox" value="emploi" name="type_project">
+                    <input class="form-check-input mr-2" type="radio" value="emploi" name="type_project" v-model="checkedCategories">
                     <label class="form-check-label mr-5" for="type_project">Emploi</label>
-                    <input class="form-check-input mr-2" type="checkbox" value="mixite" name="type_project">
+                    <input class="form-check-input mr-2" type="radio" value="mixite" name="type_project" v-model="checkedCategories">
                     <label class="form-check-label mr-5" for="type_project">Mixité</label>
                 </div>  
             </div>
@@ -71,19 +71,19 @@
                 <label for="risk"><strong>Quelle est votre appétence au risque ?</strong></label>
                 <div class="form-group mb-5">
                 <div class="form-check form-check-inline ml-3">
-                    <input class="form-check-input" type="radio" name="risk" value="risk0">
+                    <input class="form-check-input" type="radio" name="risk" value="risk0" v-model="checkedRisk">
                     <label class="form-check-label" for="risk">0</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="risk" id="inlineRadio1" value="risk1">
+                    <input class="form-check-input" type="radio" name="risk" id="inlineRadio1" value="risk1" v-model="checkedRisk">
                     <label class="form-check-label" for="risk">1</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="risk" id="inlineRadio2" value="risk2">
+                    <input class="form-check-input" type="radio" name="risk" id="inlineRadio2" value="risk2" v-model="checkedRisk">
                     <label class="form-check-label" for="risk">2</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="risk" id="inlineRadio3" value="risk3">
+                    <input class="form-check-input" type="radio" name="risk" id="inlineRadio3" value="risk3" v-model="checkedRisk">
                     <label class="form-check-label" for="risk">3</label>
                 </div>
             </div>
@@ -92,15 +92,15 @@
                 <label for="why_invest"><strong>Pourquoi souhaitez-vous investir ?</strong></label>
                  <div class="form-group">
                     <div class="form-check form-check-inline ml-3">
-                        <input class="form-check-input" type="radio" name="why_invest" value="rentabilite annuelle">
+                        <input class="form-check-input" type="radio" value="rentabilite annuelle" v-model="checkedWhyInvest">
                         <label class="form-check-label" for="why_invest">Rentabilité annuelle</label>
                     </div>
                     <div class="form-check form-check-inline ml-3">
-                        <input class="form-check-input" type="radio" name="why-invest" value="aider au developpement de projet">
+                        <input class="form-check-input" type="radio" value="aider au developpement de projet" v-model="checkedWhyInvest">
                         <label class="form-check-label" for="why_invest">Aider au développement de projet</label>
                     </div>
                     <div class="form-check form-check-inline ml-3">
-                        <input class="form-check-input" type="radio" name="why-invest" value="rentabilite et developpement de projet">
+                        <input class="form-check-input" type="radio" value="rentabilite et developpement de projet" v-model="checkedWhyInvest">
                         <label class="form-check-label" for="why_invest">Rentabilité et développement de projet</label>
                     </div>
                 </div>
@@ -108,16 +108,15 @@
             <div class="form-row mb-5">
                 <div class="form-group col-md-6">
                     <label for="password"><strong>Mot de passe</strong></label>
-                    <input type="password" class="form-control" id="password" name="password">
+                    <input type="password" class="form-control" id="password" v-model="password">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="passwordconfirm"><strong>Confirmez votre mot de passe</strong></label>
-                    <input type="password" class="form-control" id="passwordconfirm" name="passwordconfirm">
+                    <input type="password" class="form-control" id="passwordconfirm">
                 </div>
             </div>
            
-            <Bouton :title="title"></Bouton>
-            <!-- <Bouton :title="title" :@click="postForm()"></Bouton> -->
+            <Bouton :title="title" @click.native="postForm()"></Bouton>
         </form>
     </div>
 </template>
@@ -131,7 +130,7 @@
         components: { Bouton },
 
         data() {
-            return{
+            return {
                 title: "S'inscrire",
                 firstname: "",
                 lastname: "",
@@ -143,58 +142,56 @@
                 mail: "",
                 amount_to_invest: "",
                 profitability: "",
-                type_project: "",
-                risk: "",
-                why_invest: "",
+                checkedCategories: "",
+                checkedRisk: "",
+                checkedWhyInvest: "",
                 password: "",
                 passwordconfirm: "",
                 success: false,
             }
         },
         
-        //methods: {
-            // postForm() {
-            //     const axios = require("axios");
-            //     this.axios.post('urldelapi', {
-            //         firstname: this.firstname,
-            //         lastname: this.lastname,
-            //         address: this.address,
-            //         cp: this.cp,
-            //         city: this.city,
-            //         country: this.country,
-            //         phone: this.phone,
-            //         mail: this.mail,
-            //         amount_to_invest: this.amount-to-invest,
-            //         profitability: this.profitability,
-            //         type_project: this.type-project,
-            //         risk: this.risk,
-            //         why_invest: this.why_invest,
-            //         password: this.password,
-            //         passwordconfirm: this.passwordconfirm
-            //     })
-            //     .then(() => {
-            //         this.firstname = "",
-            //         this.lastname = "",
-            //         this.address = "",
-            //         this.cp = "",
-            //         this.city = "",
-            //         this.country = "",
-            //         this.phone = "",
-            //         this.mail = "",
-            //         this.amount_to_invest = "",
-            //         this.profitability = "",
-            //         this.type_project = "",
-            //         this.risk = "",
-            //         this.why_invest = "",
-            //         this.password = "",
-            //         this.passwordconfirm = "",
-            //         this.success = true;
-            //     })
-            //     .catch((err) => {
-            //         console.log(err);
-            //     }) 
-            // },
-        //}
+        methods: {
+            postForm() {
+                const axios = require("axios");
+                axios.post('http://localhost:3000/investisseurs', {
+                    firstname: this.firstname,
+                    lastname: this.lastname,
+                    address: this.address,
+                    cp: this.cp,
+                    city: this.city,
+                    country: this.country,
+                    phone: this.phone,
+                    mail: this.mail,
+                    risk: this.checkedRisk,
+                    amount_to_invest: this.amount_to_invest,
+                    profitability: this.profitability,
+                    categories: this.checkedCategories,
+                    why_invest: this.checkedWhyInvest,
+                    password: this.password,
+                })
+                .then(() => {
+                    this.firstname = "";
+                    this.lastname = "";
+                    this.address = "";
+                    this.cp = "";
+                    this.city = "";
+                    this.country = "";
+                    this.phone = "";
+                    this.mail = "";
+                    this.amount_to_invest = "";
+                    this.profitability = "";
+                    this.checkedCategories = "";
+                    this.checkedRisk = "";
+                    this.checkedWhyInvest = "";
+                    this.password = "";
+                    this.success = true;
+                })
+                .catch((err) => {
+                    console.log(err);
+                }) 
+            },
+        }
     }
 </script>
 
