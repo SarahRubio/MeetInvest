@@ -9,14 +9,17 @@
             <div class="border m-5 pt-5 pl-5 pr-5">
                 <h2 class="text-justify mb-5"><u>Description du projet :</u></h2>
                 <div class="grid">
-                     <p class="text-justify item1">{{ item.description }}</p>
+                    <div class="item1">
+                        <p class="text-justify">{{ item.description }}</p>
+                        <div v-if="item.web" class="text-justify"><small><a :href="item.web" class="text-reset"><u>Site web de {{item.title}}</u></a></small></div>
+                    </div>
                      <div class="item2">
                         <p class="text-center border p-2 ml-5 bgy"><strong>Montant recherché&nbsp;:</strong> {{ item.financial_needs }}&nbsp;€</p>
                         <p class="text-center border p-2 ml-5">Autres besoins&nbsp;: {{ item.other_needs }}</p>
                      </div>
                      <div class="item3">
                         <h3 class="text-justify mb-4">À propos de <span class="text-capitalize">{{ item.entrepreneur}} :</span></h3>
-                        <p class="text-justify">{{ item.description_entrepreneur}}</p>
+                        <p class="text-justify">{{ item.entrepreneur_description}}</p>
                      </div>
                 </div>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -50,7 +53,7 @@
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
-                     </div>   
+                     </div>
                 
                 <Bouton :title="buttonTitle" class="mb-5 text-justify" @click.native="goToContact(item.id)"></Bouton>
             </div>
